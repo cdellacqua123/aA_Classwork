@@ -9,10 +9,12 @@ class PolyTreeNode
     end
 
     def parent=(node)
-        return nil if node == nil
-        @parent = node.parent
-        node.children.each do |ele|
-            @children << ele
+        if self.parent
+            self.parent.children.delete(self)
+        end
+        @parent = node
+        if !self.parent.nil?
+            node.children << self unless node.children.include?(self)
         end
     end
 
