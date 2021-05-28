@@ -37,14 +37,14 @@ class PolyTreeNode
     end
 
     def bfs(target)
-        # copy = self.dup
-        return self if self.value == target
-        until self.children.empty?
-            current_node = self.children.shift
+        array = [self]
+        
+        until array.empty?
+            current_node = array.shift
             return current_node if current_node.value == target
-            # current_node.children.each do |node|
-            #     self.children.shift(node)
-            # end
+            current_node.children.each do |node|
+                array.push(node)
+            end
         end
         nil
     end
