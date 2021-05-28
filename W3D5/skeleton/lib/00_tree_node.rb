@@ -28,13 +28,24 @@ class PolyTreeNode
     end
 
     def dfs(target)
-        if self.value == target
+        return self if self.value == target
         self.children.each do |node|
-            current_node = dfs(node)
+            current_node = node.dfs(target)
+            return current_node unless current_node.nil?
         end
+        nil
     end
 
-    def bfs
-
+    def bfs(target)
+        # copy = self.dup
+        return self if self.value == target
+        until self.children.empty?
+            current_node = self.children.shift
+            return current_node if current_node.value == target
+            # current_node.children.each do |node|
+            #     self.children.shift(node)
+            # end
+        end
+        nil
     end
 end
