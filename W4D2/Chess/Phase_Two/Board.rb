@@ -1,9 +1,16 @@
+require_relative "Piece.rb"
+require "byebug"
+
 class Board
 
     attr_reader :board
 
     def initialize
         @board = Array.new(8){Array.new(8)}
+    end
+
+    def length
+        @board.length
     end
 
     def [](pos)
@@ -31,3 +38,8 @@ class Board
         @board[start_rows][start_cols], @board[end_rows][end_cols] = nil, @board[start_rows][start_cols]
     end
 end
+
+b = Board.new 
+k = Piece.new("W",b,[4,4],"horizontal")
+b[[3,3]] = "X"
+p k.moves("both",[4,4])
