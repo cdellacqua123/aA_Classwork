@@ -6,11 +6,11 @@ module Slideable
     def moves(dir, pos)
         if dir == "both" 
             answer = []
-            answer += move_dirs("horizontal",pos)
-            answer += move_dirs("diagonal",pos)
+            answer += move_dir("horizontal",pos)
+            answer += move_dir("diagonal",pos)
             answer.uniq
         else
-            move_dirs(dir,pos)
+            move_dir(dir,pos)
         end
     end
 
@@ -22,7 +22,7 @@ module Slideable
         DIAGONAL_DIRS
     end
 
-    def move_dirs(dir,pos)
+    def move_dir(dir,pos)
         if dir == "horizontal"
             row, col = pos
             i = row - 1
@@ -134,7 +134,7 @@ module Stepable
             AVAIL_POS << [row + 1, col - 1] if @board[[row + 1, col - 1]] == nil
             AVAIL_POS << [row - 1, col - 1] if @board[[row - 1, col - 1]] == nil
             AVAIL_POS << [row + 1, col + 1] if @board[[row + 1, col + 1]] == nil
-        else
+        elsif dir == "knight"
             AVAIL_POS << [row + 2, col - 1] if @board[[row + 2, col - 1]] == nil
             AVAIL_POS << [row + 2, col + 1] if @board[[row + 2, col + 1]] == nil
             AVAIL_POS << [row - 2, col + 1] if @board[[row - 2, col + 1]] == nil
@@ -156,6 +156,7 @@ class Piece
     def initialize(color, board, pos, dir)
         @color = color
         @board = board
+        @pos = pos
         @board[pos] = self.symbol
         @dir = dir
     end

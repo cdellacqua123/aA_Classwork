@@ -1,5 +1,9 @@
 require_relative "Piece.rb"
 require_relative "Bishop.rb"
+require_relative "Rook.rb"
+require_relative "Queen.rb"
+require_relative "King.rb"
+require_relative "Knight.rb"
 require "byebug"
 
 class Board
@@ -41,6 +45,8 @@ class Board
 end
 
 g = Board.new 
-b = Bishop.new("W",g,[4,4])
+b = Queen.new("W",g,[4,4])
 # b[[2,3]] = "X"
-p b.move_dirs
+p b.pos
+p b.move_dirs.count
+
