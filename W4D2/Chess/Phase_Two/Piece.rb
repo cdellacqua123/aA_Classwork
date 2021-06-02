@@ -3,7 +3,7 @@ module Slideable
     HORIZONTAL_DIRS = []
     DIAGONAL_DIRS = []
 
-    def moves(dir,pos)
+    def moves(dir, pos)
         if dir == "both" 
             answer = []
             answer += move_dirs("horizontal",pos)
@@ -121,21 +121,42 @@ module Slideable
     end
 end
 
-# module Stepable
-
-
-# end
+module Stepable
+    AVAIL_POS = []
+    def moves(dir, pos)
+        row, col = pos 
+        if dir == "king"   
+            AVAIL_POS << [row + 1, col] if @board[[row + 1, col]] == nil
+            AVAIL_POS << [row - 1, col] if @board[[row - 1, col]] == nil
+            AVAIL_POS << [row, col + 1] if @board[[row, col + 1]] == nil
+            AVAIL_POS << [row, col - 1] if @board[[row, col - 1]] == nil
+            AVAIL_POS << [row + 1, col + 1] if @board[[row + 1, col + 1]] == nil
+            AVAIL_POS << [row + 1, col - 1] if @board[[row + 1, col - 1]] == nil
+            AVAIL_POS << [row - 1, col - 1] if @board[[row - 1, col - 1]] == nil
+            AVAIL_POS << [row + 1, col + 1] if @board[[row + 1, col + 1]] == nil
+        else
+            AVAIL_POS << [row + 2, col - 1] if @board[[row + 2, col - 1]] == nil
+            AVAIL_POS << [row + 2, col + 1] if @board[[row + 2, col + 1]] == nil
+            AVAIL_POS << [row - 2, col + 1] if @board[[row - 2, col + 1]] == nil
+            AVAIL_POS << [row - 2, col - 1] if @board[[row - 2, col - 1]] == nil
+            AVAIL_POS << [row + 1, col + 2] if @board[[row + 1, col + 2]] == nil
+            AVAIL_POS << [row + 1, col - 2] if @board[[row + 1, col - 2]] == nil
+            AVAIL_POS << [row - 1, col + 2] if @board[[row - 1, col + 2]] == nil
+            AVAIL_POS << [row - 1, col - 2] if @board[[row - 1, col - 2]] == nil
+        end
+        AVAIL_POS
+    end
+end
 
 
 class Piece
 
-    include Slideable
     attr_reader :color, :pos, :board, :dir
 
-    def initialize(color, board, pos,dir)
+    def initialize(color, board, pos, dir)
         @color = color
         @board = board
-        @pos = pos 
+        @board[pos] = self.symbol
         @dir = dir
     end
 
@@ -144,9 +165,12 @@ class Piece
     end
 
     # def moves
-    #     avail_moves = []
+    #     moves(self.dir, self.pos)
     # end
 
+    def symbol
+        "*"
+    end
     def pos=(val)
         @pos = val
     end

@@ -1,4 +1,5 @@
 require_relative "Piece.rb"
+require_relative "Bishop.rb"
 require "byebug"
 
 class Board
@@ -39,7 +40,7 @@ class Board
     end
 end
 
-b = Board.new 
-k = Piece.new("W",b,[4,4],"horizontal")
-b[[3,3]] = "X"
-p k.moves("both",[4,4])
+g = Board.new 
+b = Bishop.new("W",g,[4,4])
+# b[[2,3]] = "X"
+p b.move_dirs
