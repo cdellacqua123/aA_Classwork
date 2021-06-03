@@ -1,16 +1,21 @@
+require "byebug"
 module Slideable
 
     HORIZONTAL_DIRS = []
     DIAGONAL_DIRS = []
 
-    def moves(dir, pos)
-        if dir == "both" 
+    def moves
+        # dir = DIR
+        # debugger
+        pos = self.pos
+
+        if self.class::DIR == "both" 
             answer = []
             answer += move_dir("horizontal",pos)
             answer += move_dir("diagonal",pos)
             answer.uniq
         else
-            move_dir(dir,pos)
+            move_dir(self.class::DIR, pos)
         end
     end
 
@@ -22,7 +27,7 @@ module Slideable
         DIAGONAL_DIRS
     end
 
-    def move_dir(dir,pos)
+    def move_dir(dir, pos)
         if dir == "horizontal"
             row, col = pos
             i = row - 1
@@ -123,9 +128,11 @@ end
 
 module Stepable
     AVAIL_POS = []
-    def moves(dir, pos)
+
+    def moves
+        pos = self.pos
         row, col = pos 
-        if dir == "king"   
+        if self.class::DIR == "king"   
             AVAIL_POS << [row + 1, col] if @board[[row + 1, col]] == nil
             AVAIL_POS << [row - 1, col] if @board[[row - 1, col]] == nil
             AVAIL_POS << [row, col + 1] if @board[[row, col + 1]] == nil
@@ -134,7 +141,7 @@ module Stepable
             AVAIL_POS << [row + 1, col - 1] if @board[[row + 1, col - 1]] == nil
             AVAIL_POS << [row - 1, col - 1] if @board[[row - 1, col - 1]] == nil
             AVAIL_POS << [row + 1, col + 1] if @board[[row + 1, col + 1]] == nil
-        elsif dir == "knight"
+        elsif self.class::DIR == "knight"
             AVAIL_POS << [row + 2, col - 1] if @board[[row + 2, col - 1]] == nil
             AVAIL_POS << [row + 2, col + 1] if @board[[row + 2, col + 1]] == nil
             AVAIL_POS << [row - 2, col + 1] if @board[[row - 2, col + 1]] == nil
@@ -151,14 +158,13 @@ end
 
 class Piece
 
-    attr_reader :color, :pos, :board, :dir
+    attr_reader :color, :pos, :board
 
-    def initialize(color, board, pos, dir)
+    def initialize(color, board, pos)
         @color = color
         @board = board
         @pos = pos
         @board[pos] = self.symbol
-        @dir = dir
     end
 
     def to_s
@@ -178,7 +184,3 @@ class Piece
 
 end
 
-# Slideable Module
-# Stepable Module
-#  Each checks type of "self" & says where each "self" can move
-# Each piece

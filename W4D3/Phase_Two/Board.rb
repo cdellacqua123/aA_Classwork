@@ -45,8 +45,8 @@ class Board
 end
 
 g = Board.new 
-b = Queen.new("W",g,[4,4])
+b = King.new("W",g,[4,4])
 # b[[2,3]] = "X"
 p b.pos
-p b.move_dirs.count
+p b.moves.count
 
