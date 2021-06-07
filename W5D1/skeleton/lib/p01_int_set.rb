@@ -18,7 +18,6 @@ class MaxIntSet
   end
 
   def include?(num)
-    # store.include?(num)
     store[num]
   end
 
@@ -40,14 +39,15 @@ class IntSet
   end
 
   def insert(num)
-    @store[num].concat(num)
+    self[num] << (num)
   end
 
   def remove(num)
+    self[num].delete(num)
   end
 
   def include?(num)
-    @store[num].include?(num)
+    self[num].include?(num)
   end
 
   private
@@ -71,18 +71,27 @@ class ResizingIntSet
   end
 
   def insert(num)
+    if !include?(num)
+      self[num] << num
+      @count += 1
+    end
   end
 
   def remove(num)
+    if include?(num)
+      @count -= 1
+      self[num].delete(num)
+    end
   end
 
   def include?(num)
+    self[num].include?(num)
   end
 
   private
 
   def [](num)
-    # optional but useful; return the bucket corresponding to `num`
+    @store[num % num_buckets]
   end
 
   def num_buckets
@@ -90,5 +99,16 @@ class ResizingIntSet
   end
 
   def resize!
+    if @count >= num_buckets
+      # double bucket size
+      # move all ele into new bucket
+      new_buckets = ResizingIntSet.new(num_buckets * 2)
+      self.each do |bucket|
+        bucket.each do |num|
+          new_buckets.insert(num)
+        end
+      end
+    end
+    new_buckets
   end
 end
