@@ -4,30 +4,32 @@ class MaxIntSet
 
   def initialize(max)
     @max = max
-    @store = []
+    @store = Array.new(max, false)
   end
 
   def insert(num)
-    if (num > max) || (num < 0)
-      raise "out of bounds"
-    else
-      store << num
-    end
+    validate!(num)
+    store[num] = true
   end
 
   def remove(num)
+    validate!(num)
+    store[num] = false
   end
 
   def include?(num)
-    store.include?(num)
+    # store.include?(num)
+    store[num]
   end
 
   private
 
   def is_valid?(num)
+    (0..max).to_a.include?(num)
   end
 
   def validate!(num)
+    raise "Out of bounds" if !is_valid?(num)
   end
 end
 
@@ -38,18 +40,21 @@ class IntSet
   end
 
   def insert(num)
+    @store[num].concat(num)
   end
 
   def remove(num)
   end
 
   def include?(num)
+    @store[num].include?(num)
   end
 
   private
 
   def [](num)
     # optional but useful; return the bucket corresponding to `num`
+    @store[num % num_buckets] 
   end
 
   def num_buckets
