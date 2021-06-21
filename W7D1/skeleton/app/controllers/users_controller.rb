@@ -7,9 +7,7 @@ class UsersController < ApplicationController
     def create
         @user = User.new(user_params)
         if @user.save
-            # Loginto that user
-            log_in(@user) # Write definition in ApplicationController
-            # redirect to that user's page
+            log_in(@user)
             redirect_to user_url(@user)
         else
             render :new
