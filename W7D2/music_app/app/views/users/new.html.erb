@@ -1,0 +1,12 @@
+<h1>Create Account</h1>
+<form action='<%= users_url%>' method='post'>
+<label for="user_name">Username: </label>
+  <input type="text" id="user_name" name="user[user_name]">
+  <br>
+
+  <label for="password">Password: </label>
+  <input type="password" id="password" name="user[password]">
+  <br>
+
+  <input type = 'submit' value='Create Account'>
+</form>
