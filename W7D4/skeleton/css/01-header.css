@@ -1,2 +1,35 @@
 /* PHASE 1: Header */
 
+body {
+    font-family: 'Newsreader', serif;
+    font-weight: normal;
+    font-size: 12px;
+}
+
+.header-logo:hover{
+    display: block;
+    background-color: gray;
+}
+
+.header-nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(223, 112, 8);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.header-list {
+    display: flex;
+    flex-direction: row;
+}
+
+.header-list > li{
+    display: block;
+    padding: 10px;
+}
+
+.header-list > li:hover{
+    background-color: gray;
+}
