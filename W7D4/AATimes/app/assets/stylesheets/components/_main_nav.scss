@@ -1,17 +1,21 @@
 .main-nav {
-
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
 }
 
 .left-nav > ul,
 .right-nav > ul {
-
+  display: flex;
+  flex-direction: row;
+  width: 100%;
 }
 
 .left-nav {
-
+  font-size: 15px;
   > ul {
     > li {
-
+      margin: 5px;
     }
   }
 
@@ -21,15 +25,15 @@
 }
 
 .right-nav  {
-
+  
   > ul {
 
     > li {
-  
+      margin: 5px;
     }
 
     > li:last-of-type {
-  
+      font-size: 30px;
     }
   }
   
@@ -40,5 +44,5 @@
 
 .left-nav > ul > li:hover,
 .right-nav > ul > li:last-of-type:hover {
-
+  background-color: rgb(161, 160, 160);
 }
