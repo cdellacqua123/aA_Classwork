@@ -1,0 +1,38 @@
+  [1m[35m (16.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS "GoalApp_test"[0m
+  [1m[35m (36.8ms)[0m  [1m[35mCREATE DATABASE "GoalApp_test" ENCODING = 'unicode'[0m
+  [1m[35m (36.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "GoalApp_test"[0m
+  [1m[35m (84.5ms)[0m  [1m[35mCREATE DATABASE "GoalApp_test" ENCODING = 'unicode'[0m
+  [1m[35m (14.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS "GoalApp_test"[0m
+  [1m[35m (80.7ms)[0m  [1m[35mCREATE DATABASE "GoalApp_test" ENCODING = 'unicode'[0m
+  [1m[35m (15.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS "GoalApp_test"[0m
+  [1m[35m (92.4ms)[0m  [1m[35mCREATE DATABASE "GoalApp_test" ENCODING = 'unicode'[0m
+  [1m[35m (16.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "GoalApp_test"[0m
+  [1m[35m (82.4ms)[0m  [1m[35mCREATE DATABASE "GoalApp_test" ENCODING = 'unicode'[0m
+  [1m[35m (17.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS "GoalApp_test"[0m
+  [1m[35m (192.2ms)[0m  [1m[35mCREATE DATABASE "GoalApp_test" ENCODING = 'unicode'[0m
+  [1m[35m (18.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "GoalApp_test"[0m
+  [1m[35m (124.5ms)[0m  [1m[35mCREATE DATABASE "GoalApp_test" ENCODING = 'unicode'[0m
+  [1m[35m (25.5ms)[0m  [1m[35mDROP DATABASE IF EXISTS "GoalApp_test"[0m
+  [1m[35m (87.1ms)[0m  [1m[35mCREATE DATABASE "GoalApp_test" ENCODING = 'unicode'[0m
+  [1m[35m (20.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "GoalApp_test"[0m
+  [1m[35m (241.3ms)[0m  [1m[35mCREATE DATABASE "GoalApp_test" ENCODING = 'unicode'[0m
+  [1m[35m (18.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "GoalApp_test"[0m
+  [1m[35m (90.3ms)[0m  [1m[35mCREATE DATABASE "GoalApp_test" ENCODING = 'unicode'[0m
+  [1m[35m (4.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (18.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "GoalApp_test"[0m
+  [1m[35m (116.9ms)[0m  [1m[35mCREATE DATABASE "GoalApp_test" ENCODING = 'unicode'[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK[0m
