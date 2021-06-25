@@ -1087,3 +1087,20 @@ Completed 200 OK in 86ms (Views: 81.8ms | ActiveRecord: 0.0ms)
 
 
 Started GET "/assets/AA_Times_Logo.png" for ::1 at 2021-06-24 19:29:34 -0400
+Started GET "/" for ::1 at 2021-06-24 16:59:30 -0700
+DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is deprecated, has no effect and will be removed without replacement. (called from block (3 levels) in <class:Railtie> at /Users/christopherdellacqua/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.0.7.2/lib/active_record/railtie.rb:113)
+Processing by StaticPagesController#index as HTML
+  Rendering static_pages/index.html.erb within layouts/application
+  Rendered shared/_main_nav.html.erb (0.3ms)
+  Rendered shared/_masthead.html.erb (0.4ms)
+  Rendered shared/_sections_nav.html.erb (0.5ms)
+  Rendered shared/_search_modal.html.erb (0.4ms)
+  Rendered shared/_main_content.html.erb (0.4ms)
+  Rendered static_pages/index.html.erb within layouts/application (77.6ms)
+Completed 200 OK in 2612ms (Views: 2569.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-f8f4d80cacaf51e02f3452356383b2134d9117802107afd706c2acc928c1f246.css?body=1" for ::1 at 2021-06-24 16:59:34 -0700
+Started GET "/assets/AA_Times_Logo.png" for ::1 at 2021-06-24 16:59:34 -0700
+Started GET "/assets/application.self-f8f4d80cacaf51e02f3452356383b2134d9117802107afd706c2acc928c1f246.css?body=1&livereload=1624579226547" for ::1 at 2021-06-24 17:00:26 -0700
+Started GET "/assets/application.self-f8f4d80cacaf51e02f3452356383b2134d9117802107afd706c2acc928c1f246.css?body=1&livereload=1624579226551" for ::1 at 2021-06-24 17:00:26 -0700
