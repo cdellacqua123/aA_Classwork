@@ -18,3 +18,20 @@ end
 
 
 
+def transpose(arr)
+    answer = []
+    (0...arr[0].length).each do |i|
+        temp = []
+        (0...arr.length).each do |y|
+            temp << arr[y][i]
+        end
+        answer << temp 
+    end
+    answer 
+end
+
+def myEach(arr,proc)
+    (0...arr.length) do |i| 
+        prc.call(arr[i])
+    end
+end

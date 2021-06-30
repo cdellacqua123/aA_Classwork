@@ -35,3 +35,17 @@ Array.prototype.twoSum = function() {
 //     });
 //     console.log(answer);
 // }
+
+Array.prototype.transpose = function() {
+    let answer = [];
+    for (let i = 0; i < this[0].length; i++) {
+        let temp = []; 
+        for (let y = 0; y < this.length; y++) {
+            temp.push(this[y][i]);
+        }
+        answer.push(temp);
+    }
+    // return answer
+    console.log(answer);
+};
+
