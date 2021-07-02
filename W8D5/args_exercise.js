@@ -52,7 +52,7 @@ Function.prototype.myBind1 = function (context) {
 };
 
 
-markov.says.myBind1(pavlov, "meow", "Kush")();
+// markov.says.myBind1(pavlov, "meow", "Kush")();
 // // Pavlov says meow to Kush!
 // // true
 
@@ -64,7 +64,7 @@ Function.prototype.myBind2 = function (context) {
 }
 
 
-markov.says.myBind2(pavlov)("meow", "a tree");
+// markov.says.myBind2(pavlov)("meow", "a tree");
 // Pavlov says meow to a tree!
 // true
 
@@ -77,12 +77,21 @@ Function.prototype.myBind3 = function (context) {
     }
 };
 
-markov.says.myBind3(pavlov, "meow")("Markov");
+// markov.says.myBind3(pavlov, "meow")("Markov");
 // Pavlov says meow to Markov!
 // true
 
+Function.prototype.myBind4 = function(context) {
+    // let that = this;
+    return (...args) => {
+        return this.apply(context, args);
+    };
+}
+
 // // no bind time args (other than context), call time args are "meow" and "me"
-// const notMarkovSays = markov.says.myBind(pavlov);
+// const notMarkovSays = markov.says.myBind4(pavlov);
 // notMarkovSays("meow", "me");
 // // Pavlov says meow to me!
 // // true
+
+
