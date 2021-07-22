@@ -10,7 +10,7 @@ const TodoList = (props) => {
       <ul>
         {todos.map(todo => TodoListItem(todo))}
       </ul>
-      <TodoForm todos = {todos}/>
+      <TodoForm receiveTodo={props.receiveTodo}/>
     </div>
   )
 }
