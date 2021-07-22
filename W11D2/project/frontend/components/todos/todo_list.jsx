@@ -1,22 +1,16 @@
 import React from 'react';
-import { allTodos } from '../../reducers/selectors';
+import TodoListItem from '../todo_list/todo_list_item';
+import TodoForm from '../todo_list/todo_form';
 
 const TodoList = (props) => {
   const todos = props.todos;
-  
   return (
     <div>
-      <h1>All the Todos</h1>
+      <h3>All the Todos</h3>
       <ul>
-        {todos.map(todo => 
-          <li key={todo.id}>
-            Title: {todo.title}
-            <br />
-            Body: {todo.body}
-            <br />
-            Done? {todo.done ? '✅' : '❌'}
-          </li>)}
+        {todos.map(todo => TodoListItem(todo))}
       </ul>
+      <TodoForm todos = {todos}/>
     </div>
   )
 }
